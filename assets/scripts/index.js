@@ -2,8 +2,9 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-console.log('up and runnning')
+console.log('up and runnning index')
 
+const authEvents = require('./events.js')
 const squaresInPlay = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 
 let numClicks = 0
@@ -16,6 +17,7 @@ const checkForWin = function () {
   console.log('I made it to checkForWin function', squaresInPlay)
   if ((squaresInPlay[0] === squaresInPlay[1]) && (squaresInPlay[1] === squaresInPlay[2])) {
     console.log(squaresInPlay[0], 'WINS! - top')
+    alert(squaresInPlay[0], 'WINS!')
   } else if ((squaresInPlay[0] === squaresInPlay[3]) && (squaresInPlay[3] === squaresInPlay[6])) {
     console.log(squaresInPlay[0], 'WINS! - left')
   } else if ((squaresInPlay[1] === squaresInPlay[4]) && (squaresInPlay[4] === squaresInPlay[7])) {
@@ -53,6 +55,7 @@ const fillSqInPlay = function () {
 $(() => {
   setAPIOrigin(location, config)
   $('.gameBoard').children('').children('').children('').on('click', fillSqInPlay)
+  authEvents.addHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file
