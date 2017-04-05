@@ -1,2 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  font-family: serif;
+}
+h1 {
+  text-align: center;
+  width: 675px;
+}
+.gameBoard {
+  background-size: cover;
+  margin: 20px;
+//  background: url('../images/Sample-Tic-Tac-Toe-Template.jpg');
+}
+.square {
+  background-size: cover;
+  border: 2px #000 solid;
+  float: left;
+  height: 225px;
+  width: 225px;
+  padding: 5px;
+}
