@@ -2,11 +2,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  font-family: serif;
+  font-family: arial;
 }
 h1 {
   text-align: center;
   width: 675px;
+h5 {
+  text-align: right;
+}
+}
+.new-game {
+  background-color: blue;
+  color: white;
 }
 .gameBoard {
   background-size: cover;
@@ -15,11 +22,17 @@ h1 {
 }
 .square {
   background-size: cover;
-  border: 2px #000 solid;
+  border: 2px #220 solid;
+  background-color: #0f0;
   float: left;
   height: 225px;
   width: 225px;
   padding: 5px;
+}
+
+#1 {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 #sign-up {

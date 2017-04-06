@@ -19,7 +19,7 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   gameApi.signIn(data)
-    .then(gameUi.signInSuccess)
+    .then(gameUi.signInSuccess, console.log(data, data.credentials.email))
     .catch(gameUi.signInFailure)
 }
 

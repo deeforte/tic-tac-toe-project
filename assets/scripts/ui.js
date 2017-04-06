@@ -1,4 +1,5 @@
 'use strict'
+require('./index')
 
 const store = require('./store')
 
@@ -13,6 +14,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   console.log('signin success ran data is ', data)
   store.user = data.user
+  $('h5').text(store.user.email)
   console.log(store)
 }
 
