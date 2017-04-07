@@ -1,12 +1,10 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
+## Link to hosted game
 
 A template for starting front-end projects. Webpack for `require` system, build
 pipeline, and development server. Boostrap and Handlebars.js included. No
 front-end frameworks included.
 
-## Dependencies
+## Technologies used
 
 Install with `npm install`.
 
@@ -20,7 +18,7 @@ running `npm update --save && npm update --save-dev`. You may wish to test these
 changes by deleting the `node_modules` directory and running `npm install`.
 Fix any conflicts.
 
-## Installation
+## Planning
 
 1.  [Download](../../archive/master.zip) this template.
 1.  Unzip and rename the template directory.
@@ -28,7 +26,7 @@ Fix any conflicts.
 1.  Move into the new project and `git init`.
 1.  Install dependencies with `npm install`.
 
-## Structure
+## Unsolved problems
 
 Dependencies are stored in [`package.json`](package.json).
 
@@ -59,7 +57,7 @@ an API.
 
 To deploy a browser-template based SPA, run `grunt deploy`.
 
-## Tasks
+## Wireframes
 
 Developers should run these often!
 
@@ -71,7 +69,7 @@ Developers should run these often!
 -   `grunt build`: place bundled styles and scripts where `index.html` can find
     them
 
-## [License](LICENSE)
+## User stories
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
 1.  All software code is licensed under GNU GPLv3. For commercial use or

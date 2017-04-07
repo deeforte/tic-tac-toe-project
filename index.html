@@ -13,51 +13,10 @@
     </head>
     <body class="container-fluid">
     <header>
-      </header>
-      <div class="gameBoard">
         <h1>tic tac toe</h1>
-        <h5>sign in below to begin play</h5>
-        <div class="row row1">
-          <div class="square">
-            <img id="0" src="assets/images/blank.png" alt="square 1">
-          </div>
-          <div class="square">
-            <img id="1" src="assets/images/blank.png" alt="square 2">
-          </div>
-          <div class="square">
-            <img id="2" src="assets/images/blank.png" alt="square 3">
-          </div>
-        </div>
-
-        <div class="row row2">
-          <div class="square">
-            <img id="3" src="assets/images/blank.png" alt="square 4">
-          </div>
-          <div class="square">
-            <img id="4" src="assets/images/blank.png" alt="square 5">
-          </div>
-          <div class="square">
-            <img id="5" src="assets/images/blank.png" alt="square 6">
-          </div>
-        </div>
-
-        <div class="row row3">
-          <div class="square">
-            <img id="6" src="assets/images/blank.png" alt="square 7">
-          </div>
-          <div class="square">
-            <img id="7" src="assets/images/blank.png" alt="square 8">
-          </div>
-          <div class="square">
-            <img id="8" src="assets/images/blank.png" alt="square 9">
-          </div>
-        </div>
-
-      </div>
-
-      <button class="new-game">New Game</button>
-
-      <footer>footer goes here</footer>
+        <h2>sign in to begin play</h2>
+        </header>
+      <div class="signinForms">
       <form id="sign-up">
       <fieldset>
         <legend>Sign up!</legend>
@@ -78,10 +37,54 @@
           <input type="submit" name="submit" value="Sign in">
       </fieldset>
       </form>
+    </div>
+      <div class="gameBoard"  style='visibility: hidden'>
+        <h3>Scoreboard: no games played</h3>
+        <h5>sign in below to begin play</h5>
+        <div class="row row1">
+          <div class="square">
+            <img id="0" class="square0" src="assets/images/blank.png" alt="square 0">
+          </div>
+          <div class="square">
+            <img id="1" class="square1" src="assets/images/blank.png" alt="square 1">
+          </div>
+          <div class="square">
+            <img id="2" src="assets/images/blank.png" alt="square 2">
+          </div>
+        </div>
 
+        <div class="row row2">
+          <div class="square">
+            <img id="3" src="assets/images/blank.png" alt="square 3">
+          </div>
+          <div class="square">
+            <img id="4" src="assets/images/blank.png" alt="square 4">
+          </div>
+          <div class="square">
+            <img id="5" src="assets/images/blank.png" alt="square 5">
+          </div>
+        </div>
+
+        <div class="row row3">
+          <div class="square">
+            <img id="6" src="assets/images/blank.png" alt="square 6">
+          </div>
+          <div class="square">
+            <img id="7" src="assets/images/blank.png" alt="square 7">
+          </div>
+          <div class="square">
+            <img id="8" src="assets/images/blank.png" alt="square 8">
+          </div>
+        </div>
+      <button class="new-game">New Game</button>
+      </div>
+
+      <footer></footer>
+
+    <div class="signoutForms" style='visibility: hidden'>
       <form id="sign-out">
         <fieldset>
-          <legend>Sign out!</legend>
+          <legend>Sign out</legend>
           <input type="submit" name="submit" value="Sign out!">
           <br/>
         </fieldset>
@@ -89,7 +92,7 @@
 
       <form id="change-password">
         <fieldset>
-          <legend>Change password!</legend>
+          <legend>Change password</legend>
           <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old Password">
           <input type="password" name="passwords[new]" id="change-password-new" placeholder="New Password">
           <br/>
@@ -97,6 +100,7 @@
           <br/>
         </fieldset>
       </form>
+    </div>
 
     </body>
 </html>

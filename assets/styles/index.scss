@@ -6,10 +6,15 @@ body {
 }
 h1 {
   text-align: center;
+  color: #f00;
   width: 675px;
-h5 {
-  text-align: right;
 }
+h3 {
+  text-align: left;
+  color: #00f;
+}
+h5 {
+  text-align: left;
 }
 .new-game {
   background-color: blue;
@@ -23,7 +28,7 @@ h5 {
 .square {
   background-size: cover;
   border: 2px #220 solid;
-  background-color: #0f0;
+  background-color: #ffffe0;
   float: left;
   height: 225px;
   width: 225px;
@@ -31,8 +36,8 @@ h5 {
 }
 
 #1 {
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
+  border-left: 2px #220 solid;
+  border-right: 2px #220 solid;;
 }
 
 #sign-up {
@@ -51,6 +56,7 @@ width: 675px;
 background-color: #d00;
 padding: 10px;
 width: 675px;
+color: red;
 }
 
 #change-password {

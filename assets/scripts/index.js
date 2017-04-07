@@ -5,17 +5,18 @@ const config = require('./config')
 console.log('up and runnning index')
 
 const authEvents = require('./events.js')
-let squaresInPlay = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-
+const gameEvents = require('./games.js')
 const usersOnLine = require('./store')
+
+let squaresInPlay = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
 let numClicks = 0
 let numGames = 0
 let xGames = 0
 let oGames = 0
 let winner = 'not yet'
 let winMatch = 'not yet'
-
-// put on click function here
+// const winAudio = function () {}
+// const catAudio = function () {}
 
 // add check for win here
 const checkForWin = function () {
@@ -53,6 +54,8 @@ const checkForWin = function () {
     winner = squaresInPlay[2]
     winMatch = 'diagonal right to left'
     weGotAWinner(winner, winMatch)
+  } else if (numClicks === 9) {
+    catsGame()
   }
 }
 
@@ -66,8 +69,14 @@ const weGotAWinner = function (whoWon, match) {
   alert('We Got A Winner. Congrats Player ' + whoWon + ' matched 3 on ' + match + '.' +
         '  The score is - Player-X won ' + xGames + '. Player-O won ' + oGames + '.' +
         '  Click new game to play again.')
+  $('h3').text('Scoreboard: X has ' + xGames + ' wins and O has ' + oGames + ' wins')
 }
-
+// catsGame Function
+const catsGame = function () {
+  numGames = numGames + 1
+  alert('No matches and No Winner.  Click new game to play again.')
+}
+// Function when new game button is clicked
 const playAgain = function () {
   numClicks = 0
   winner = 'not yet'
@@ -77,16 +86,26 @@ const playAgain = function () {
 //  $('.square').on('click')
 //  $('img').bind('click')
 //  $('.square').bind('click')
+  gameEvents.gameCreate()
   document.getElementsByClassName('.square').onclick = false
   document.getElementsByClassName('.square').onclick = true
   for (let i = 0; i < squaresInPlay.length; i++) {
     document.getElementsByTagName('img')[i].src = 'assets/images/blank.png'
 //    document.getElementsByTagName('img')[i].onclick = true
-    console.log('Im in playAgain for loop')
+//    console.log('Im in playAgain for loop')
   }
 }
 
+const afterSignin = function () {
+  getUserStats()
+  playAgain()
+}
+// put on click function here
 const fillSqInPlay = function () {
+  if (usersOnLine === null) {
+    alert('Please sign in to begin play')
+    return
+  }
   if (winner !== 'not yet') {
     alert('Click new game to play again.')
     return
@@ -104,7 +123,7 @@ const fillSqInPlay = function () {
 //  console.log('data=', data)
   const gridNum = this.id
   if ((squaresInPlay[gridNum] === 'X') || (squaresInPlay[gridNum] === 'O')) {
-    alert('Click another square')
+    alert('Click an unused square')
     return
   }
   numClicks = numClicks + 1
@@ -127,7 +146,9 @@ $(() => {
   authEvents.addHandlers()
   $('.new-game').on('click', playAgain)
 })
-module.exports = usersOnLine
+module.exports = {
+  usersOnLine
+}
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
