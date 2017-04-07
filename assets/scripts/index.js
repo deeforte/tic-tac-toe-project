@@ -86,11 +86,11 @@ const playAgain = function () {
 //  $('.square').on('click')
 //  $('img').bind('click')
 //  $('.square').bind('click')
-  gameEvents.gameCreate()
+//  gameEvents.gameCreate()
   document.getElementsByClassName('.square').onclick = false
   document.getElementsByClassName('.square').onclick = true
   for (let i = 0; i < squaresInPlay.length; i++) {
-    document.getElementsByTagName('img')[i].src = 'assets/images/blank.png'
+    document.getElementsByTagName('img')[i].src = 'http://i.imgur.com/ehX2O0k.png'
 //    document.getElementsByTagName('img')[i].onclick = true
 //    console.log('Im in playAgain for loop')
   }
@@ -130,10 +130,10 @@ const fillSqInPlay = function () {
   console.log('clicked on a square', gridNum, 'number of clicks', numClicks)
   if (numClicks % 2 === 0) {
     squaresInPlay[gridNum] = 'O'
-    this.setAttribute('src', 'assets/images/blueO.png')
+    this.setAttribute('src', 'http://i.imgur.com/2BGTqzX.png')
   } else {
     squaresInPlay[gridNum] = 'X'
-    this.setAttribute('src', 'assets/images/redX.png')
+    this.setAttribute('src', 'http://i.imgur.com/FFPpKwq.png')
   }
   if (numClicks > 0) {
     checkForWin(squaresInPlay)
