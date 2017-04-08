@@ -28,7 +28,6 @@ h5 {
 .gameBoard {
   background-size: cover;
   margin: 20px;
-//  background: url('../images/Sample-Tic-Tac-Toe-Template.jpg');
 }
 img {
   background-size: cover;
@@ -42,10 +41,18 @@ img {
   width: 225px;
   padding: 5px;
 }
-
-#1 {
-  border-left: 2px #220 solid;
-  border-right: 2px #220 solid;;
+@media (max-width: 715px) {
+  .square {
+    height: 100px;
+    width: 100px;
+  }
+  h1 {
+    width: 300px;
+  }
+  img {
+    height: 85px;
+    width: 85px;
+  }
 }
 
 #sign-up {

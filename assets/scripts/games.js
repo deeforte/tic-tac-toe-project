@@ -3,7 +3,7 @@ const config = require('./config')
 const gameSApi = require('./gstatapi.js')
 const gameSUi = require('./gstatui.js')
 
-console.log('games js up and running')
+// console.log('games js up and running')
 
 const getUserStats = function () {
   gameSApi.read()

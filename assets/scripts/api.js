@@ -30,7 +30,7 @@ const signOut = () => {
 }
 
 const chgPswd = (data) => {
-  console.log('data is ', data)
+//  console.log('data is ', data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',

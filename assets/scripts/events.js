@@ -6,7 +6,7 @@ const gameApi = require('./api.js')
 const gameUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields')
 
-console.log('up and runnning auth events')
+//console.log('up and runnning auth events')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -25,7 +25,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+//  console.log('sign out ran')
   gameApi.signOut()
     .then(gameUi.signOutSuccess)
     .catch(gameUi.signOutFailure)
@@ -34,7 +34,7 @@ const onSignOut = function (event) {
 const onChgPswd = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('changed password')
+//  console.log('changed password')
   gameApi.chgPswd(data)
     .then(gameUi.chgPswdSuccess)
     .catch(gameUi.chgPswdFailure)

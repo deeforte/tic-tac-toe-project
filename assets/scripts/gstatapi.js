@@ -25,9 +25,9 @@ const create = function () {
 }
 
 const update = function (updatedGame, updatedID) {
-  console.log(updatedID)
-  console.log(store)
-  console.log(updatedGame)
+//  console.log(updatedID)
+//  console.log(store)
+//  console.log(updatedGame)
   return $.ajax({
     url: config.apiOrigin + '/games/' + updatedID,
     method: 'PATCH',

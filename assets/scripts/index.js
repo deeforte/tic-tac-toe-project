@@ -2,7 +2,6 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-console.log('up and runnning index')
 
 const authEvents = require('./events.js')
 const gameEvents = require('./games.js')
@@ -32,7 +31,6 @@ let winMatch = 'not yet'
 
 // add check for win here
 const checkForWin = function () {
-  console.log('I made it to checkForWin function', squaresInPlay)
   if ((squaresInPlay[0] === squaresInPlay[1]) && (squaresInPlay[1] === squaresInPlay[2])) {
     winner = squaresInPlay[0]
     winMatch = 'top row'
@@ -62,7 +60,6 @@ const checkForWin = function () {
     winMatch = 'diagonal left to right'
     weGotAWinner(winner, winMatch)
   } else if ((squaresInPlay[2] === squaresInPlay[4]) && (squaresInPlay[4] === squaresInPlay[6])) {
-    console.log(squaresInPlay[2], 'WINS! - diagRtoL')
     winner = squaresInPlay[2]
     winMatch = 'diagonal right to left'
     weGotAWinner(winner, winMatch)
@@ -85,7 +82,7 @@ const weGotAWinner = function (whoWon, match) {
 const catsGame = function () {
   numGames = numGames + 1
   tieGames = tieGames + 1
-  $('h3').text('No matches and No Winner.  Click new game to play again.')
+  $('h3').text('Game over - no winner is a cats game.  Click new game to play again.')
   $('h4').text('Scoreboard: Player-X has ' + xGames + ' wins / Player-O has ' + oGames + ' wins / both have ' + tieGames + ' cats games')
 }
 // Function when new game button is clicked
@@ -108,27 +105,14 @@ const playAgain = function () {
 //    console.log('Im in playAgain for loop')
   }
 }
-
-const afterSignin = function () {
-  gameEvents.getUserStats()
-  playAgain()
-}
 // put on click function here
 const fillSqInPlay = function () {
-  console.log('in play function store=', currentGame)
+//  console.log('in play function store=', currentGame)
   if (winner !== 'not yet') {
     $('h3').text('Click New Game to play again.')
     return
   }
-  // if (usersOnline.user.email === false) {
-  //  alert('Please sign in below to begin play.')
-  // }
-  console.log('users=', usersOnLine)
-  //  if (usersOnLine.user.email !=== "deeforte@email.com") {
-  //  console.log('Please sign in')
-  //  return
-  // }
-  console.log(usersOnLine.user.email)
+//  console.log(usersOnLine.user.email)
 //  console.log('store=', store)
 //  console.log('data=', data)
   const gridNum = this.id
@@ -136,7 +120,7 @@ const fillSqInPlay = function () {
     return
   }
   numClicks = numClicks + 1
-  console.log('clicked on a square', gridNum, 'number of clicks', numClicks)
+//  console.log('clicked on a square', gridNum, 'number of clicks', numClicks)
   if (numClicks % 2 === 0) {
     squaresInPlay[gridNum] = 'O'
     this.setAttribute('src', 'http://i.imgur.com/2BGTqzX.png')
@@ -152,7 +136,7 @@ const fillSqInPlay = function () {
   // updatedGame.game.cell.index.value = cellVal
   updatedGame.game.cell.value = squaresInPlay[gridNum]
   updatedID = currentGame.game.game.id
-  console.log('updatedGame=', updatedGame, updatedID)
+//  console.log('updatedGame=', updatedGame, updatedID)
   gameEvents.gameUpdate(updatedGame, updatedID)
 }
 
@@ -165,7 +149,6 @@ $(() => {
 module.exports = {
   usersOnLine,
   updatedGame,
-  afterSignin,
   updatedID
 }
 
