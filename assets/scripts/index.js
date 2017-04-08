@@ -78,20 +78,19 @@ const weGotAWinner = function (whoWon, match) {
   } else if (whoWon === 'O') {
     oGames = oGames + 1
   }
-  alert('We Got A Winner. Congrats Player ' + whoWon + ' matched 3 on ' + match + '.' +
-        '  The score is - Player-X won ' + xGames + '. Player-O won ' + oGames + '.' +
-        '  Click new game to play again.')
+  $('h3').text('Congrats Player ' + whoWon + ' matched 3 on ' + match + '.  Click new game to play again.')
   $('h4').text('Scoreboard: Player-X has ' + xGames + ' wins / Player-O has ' + oGames + ' wins / both have ' + tieGames + ' cats games')
 }
 // catsGame Function
 const catsGame = function () {
   numGames = numGames + 1
   tieGames = tieGames + 1
-  alert('No matches and No Winner.  Click new game to play again.')
+  $('h3').text('No matches and No Winner.  Click new game to play again.')
   $('h4').text('Scoreboard: Player-X has ' + xGames + ' wins / Player-O has ' + oGames + ' wins / both have ' + tieGames + ' cats games')
 }
 // Function when new game button is clicked
 const playAgain = function () {
+  $('h3').text(' ')
   numClicks = 0
   winner = 'not yet'
   winMatch = 'not yet'
@@ -104,7 +103,7 @@ const playAgain = function () {
   document.getElementsByClassName('.square').onclick = false
   document.getElementsByClassName('.square').onclick = true
   for (let i = 0; i < squaresInPlay.length; i++) {
-    document.getElementsByTagName('img')[i].src = 'http://i.imgur.com/ehX2O0k.png'
+    document.getElementsByTagName('img')[i].src = 'http://i.imgur.com/54nuKyt.png'
 //    document.getElementsByTagName('img')[i].onclick = true
 //    console.log('Im in playAgain for loop')
   }
@@ -118,7 +117,7 @@ const afterSignin = function () {
 const fillSqInPlay = function () {
   console.log('in play function store=', currentGame)
   if (winner !== 'not yet') {
-    alert('Click new game to play again.')
+    $('h3').text('Click New Game to play again.')
     return
   }
   // if (usersOnline.user.email === false) {
@@ -134,7 +133,6 @@ const fillSqInPlay = function () {
 //  console.log('data=', data)
   const gridNum = this.id
   if ((squaresInPlay[gridNum] === 'X') || (squaresInPlay[gridNum] === 'O')) {
-    alert('Click an unused square')
     return
   }
   numClicks = numClicks + 1

@@ -2,10 +2,12 @@
 require('./index')
 const store = require('./store')
 
-const readGameSuccess = (game) => {
-  console.log('read game success ran data is ', game)
-  store.game = game
-  console.log(store.game)
+const readGameSuccess = (stats) => {
+  console.log('read game success ran data is ', stats)
+  store.stats = stats
+  console.log(store.stats)
+  console.log(store.stats.games.length)
+  $('h5').text(store.user.email + ' has played ' + store.stats.games.length + ' games before this login')
 }
 
 const readGameFailure = (game) => {
@@ -16,7 +18,7 @@ const newGameSuccess = (game) => {
   console.log('new game success ran data is ', game)
   store.game = game
   console.log(game.game.id)
-  $('h5').text(store.user.email + ' is playing game ' + game.game.id)
+//  $('h5').text(store.user.email + ' is playing game ' + game.game.id)
   console.log(store.game)
 }
 

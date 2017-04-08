@@ -3,7 +3,6 @@
 const config = require('./config')
 const store = require('./store')
 
-
 const read = function () {
   return $.ajax({
     url: config.apiOrigin + '/games',
