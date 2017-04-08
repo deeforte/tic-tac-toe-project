@@ -81,7 +81,7 @@ const weGotAWinner = function (whoWon, match) {
   alert('We Got A Winner. Congrats Player ' + whoWon + ' matched 3 on ' + match + '.' +
         '  The score is - Player-X won ' + xGames + '. Player-O won ' + oGames + '.' +
         '  Click new game to play again.')
-  $('h3').text('Scoreboard: Player-X has ' + xGames + ' wins / Player-O has ' + oGames + ' wins / both have ' + tieGames + ' cats games')
+  $('h4').text('Scoreboard: Player-X has ' + xGames + ' wins / Player-O has ' + oGames + ' wins / both have ' + tieGames + ' cats games')
 }
 // catsGame Function
 const catsGame = function () {
