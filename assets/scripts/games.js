@@ -5,41 +5,26 @@ const gameSUi = require('./gstatui.js')
 
 console.log('games js up and running')
 
-const gameStats = {
-  'game': {
-    'id': 0,
-    'cells': ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
-    'over': false,
-    'player_x': {
-      'id': 3,
-      'email': 'and@and.com'
-    },
-    'player_o': null
-  }
-}
-
 const getUserStats = function () {
- }
+  gameSApi.read()
+  .then(gameSUi.readGameSuccess)
+  .catch(gameSUi.readGameFailure)
+}
 
 const gameCreate = function () {
-//  event.preventDefault()
-  const data = gameStats
-  const currentGame = data.game
-  gameSApi.create(data)
-  console.log('create game ran', currentGame)
+  gameSApi.create()
+  .then(gameSUi.newGameSuccess)
+  .catch(gameSUi.newGameFailure)
 }
-// if (game.title !== 0) {
-//    booksApi.create(data)
-//     .then(booksUi.onSuccessNoContent)
-//    .catch(booksUi.onError)
-//    } else {
-//         console.log('Please provide a book id!')
-//  }
-//}
 
-// const gameUpdate = function () {
-// }
+const gameUpdate = function (updatedGame, updatedID) {
+  gameSApi.update(updatedGame, updatedID)
+  .then(gameSUi.updateGameSuccess)
+  .catch(gameSUi.updateGameFailure)
+}
 
 module.exports = {
-  gameCreate
+  gameCreate,
+  gameUpdate,
+  getUserStats
 }

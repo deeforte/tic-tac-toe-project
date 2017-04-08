@@ -2,7 +2,7 @@
 require('./index')
 
 const store = require('./store')
-// const gameEvents = require('./games')
+const gameEvents = require('./games.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -21,6 +21,10 @@ const signInSuccess = (data) => {
   $('.signinForms').hide()
   $('.signoutForms').css('visibility', 'visible')
   $('.gameBoard').css('visibility', 'visible')
+  // gameEvents.getUserStats()
+  // console.log(store.games)
+  // console.log(store)
+  gameEvents.gameCreate()
   console.log(store)
 }
 

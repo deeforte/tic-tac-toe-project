@@ -1,26 +1,43 @@
 'use strict'
 require('./index')
+const store = require('./store')
 
-const onSuccess = function (data) {
-  if (!data) {
-    console.warn('Either you deleted something, or something went wrong.')
-  } else if (data.games) {
-    console.log(data.games)
-  } else {
-    console.table(data.games)
-  }
+const readGameSuccess = (game) => {
+  console.log('read game success ran data is ', game)
+  store.game = game
+  console.log(store.game)
 }
 
-const onSuccessNoContent = function () {
-  console.log('Your request was successsful and you returned no content')
+const readGameFailure = (game) => {
+  console.log('read bombed')
 }
 
-const onError = function (response) {
-  console.error(response)
+const newGameSuccess = (game) => {
+  console.log('new game success ran data is ', game)
+  store.game = game
+  console.log(game.game.id)
+  $('h5').text(store.user.email + ' is playing game ' + game.game.id)
+  console.log(store.game)
+}
+
+const newGameFailure = (game) => {
+  console.log('create bombed')
+}
+
+const updateGameSuccess = (game) => {
+  console.log('update game success ran data is ', game)
+  console.log(store.game)
+}
+
+const updateGameFailure = (game) => {
+  console.log('update bombed')
 }
 
 module.exports = {
-  onSuccess,
-  onError,
-  onSuccessNoContent
+  newGameSuccess,
+  newGameFailure,
+  updateGameSuccess,
+  updateGameFailure,
+  readGameSuccess,
+  readGameFailure
 }
