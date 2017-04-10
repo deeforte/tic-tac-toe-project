@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+    <header>
+        <h1>tic tac toe</h1>
+        <h2>sign in to begin play</h2>
+        </header>
+      <div class="signinForms">
+      <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Enter email address">
+          <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Enter password">
+          <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm password">
+        <br/>
+          <input type="submit" name="submit" value="Sign up!">
+      </fieldset>
+      </form>
+
+      <form id="sign-in">
+      <fieldset>
+        <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Enter email address">
+          <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Enter password">
+        <br/>
+          <input type="submit" name="submit" value="Sign in">
+      </fieldset>
+      </form>
+    </div>
+      <div class="gameBoard"  style='visibility: hidden'>
+        <h3> </h3>
+        <h4>Scoreboard: no games played since signin</h4>
+        <h5>sign in below to begin play</h5>
+        <div class="row row1">
+          <div class="square">
+            <img id="0" class="square0" src="http://i.imgur.com/54nuKyt.png" alt="square 0">
+          </div>
+          <div class="square">
+            <img id="1" class="square1" src="http://i.imgur.com/54nuKyt.png" alt="square 1">
+          </div>
+          <div class="square">
+            <img id="2" src="http://i.imgur.com/54nuKyt.png" alt="square 2">
+          </div>
+        </div>
+
+        <div class="row row2">
+          <div class="square">
+            <img id="3" src="http://i.imgur.com/54nuKyt.png" alt="square 3">
+          </div>
+          <div class="square">
+            <img id="4" src="http://i.imgur.com/54nuKyt.png" alt="square 4">
+          </div>
+          <div class="square">
+            <img id="5" src="http://i.imgur.com/54nuKyt.png" alt="square 5">
+          </div>
+        </div>
+
+        <div class="row row3">
+          <div class="square">
+            <img id="6" src="http://i.imgur.com/54nuKyt.png" alt="square 6">
+          </div>
+          <div class="square">
+            <img id="7" src="http://i.imgur.com/54nuKyt.png" alt="square 7">
+          </div>
+          <div class="square">
+            <img id="8" src="http://i.imgur.com/54nuKyt.png" alt="square 8">
+          </div>
+        </div>
+      <button class="new-game">New Game</button>
+      </div>
+
+      <footer></footer>
+
+    <div class="signoutForms" style='visibility: hidden'>
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign out</legend>
+          <input type="submit" name="submit" value="Sign out!">
+          <br/>
+        </fieldset>
+      </form>
+
+      <form id="change-password">
+        <fieldset>
+          <legend>Change password</legend>
+          <input type="password" name="passwords[old]" id="change-password-old" placeholder="Old password">
+          <input type="password" name="passwords[new]" id="change-password-new" placeholder="New password">
+          <br/>
+          <input type="submit" name="submit" value="Change password!">
+          <br/>
+        </fieldset>
+      </form>
+    </div>
+
+    </body>
+</html>
