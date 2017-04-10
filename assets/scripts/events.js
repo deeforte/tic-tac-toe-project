@@ -6,7 +6,7 @@ const gameApi = require('./api.js')
 const gameUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields')
 
-//console.log('up and runnning auth events')
+// console.log('up and runnning auth events')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)

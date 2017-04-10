@@ -42,4 +42,6 @@ http://i.imgur.com/qlOrujo.jpg
 
 1. User wants a working tic tac toe game to be viewed in a browser
 2. User would like to be able to login and keep track of games
-3. 
+3. User wants to hide signin and signup if the user is signed in
+4. User wants the signin to reappear when they sign out
+5. User wants to see how many games they have played since sign in
